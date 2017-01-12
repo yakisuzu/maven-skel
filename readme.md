@@ -1,6 +1,6 @@
 # mvn generate
-`mvn archetype:generate -B -DarchetypeGroupId=pl.org.miki -DarchetypeArtifactId=java8-quickstart-archetype -DarchetypeVersion=1.0.0 -DgroupId=sample -DartifactId=maven-skel`  
-`cd maven-skel`  
+`mvn archetype:generate -B -DarchetypeGroupId=pl.org.miki -DarchetypeArtifactId=java8-quickstart-archetype -DarchetypeVersion=1.0.0 -DgroupId=sample -DartifactId=skel-maven`  
+`cd skel-maven`  
 `mvn versions:use-latest-versions`  
 `mvn versions:commit`  
 `mvn eclipse:clean eclipse:eclipse`  
@@ -10,7 +10,7 @@
 
 # jar
 `mvn package`  
-`java -jar target/maven-skel-1.0.0-jar-with-dependencies.jar`  
+`java -jar target/skel-maven-1.0.0-jar-with-dependencies.jar`  
 
 # url
 [The Central Repository](http://search.maven.org/)  
