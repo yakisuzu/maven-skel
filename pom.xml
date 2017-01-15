@@ -9,11 +9,13 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <finalName>maven-${project.version}</finalName>
     <java.version>1.8</java.version>
     <java.mainClass>sample.App</java.mainClass>
   </properties>
 
   <dependencies>
+    <!-- test -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -23,6 +25,8 @@
   </dependencies>
 
   <build>
+    <finalName>${finalName}</finalName>
+
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -58,21 +62,18 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-assembly-plugin</artifactId>
         <configuration>
-          <descriptorRefs>
-            <descriptorRef>jar-with-dependencies</descriptorRef>
-          </descriptorRefs>
+          <descriptors>
+            <descriptor>src/maven/assembly/assembly.xml</descriptor>
+          </descriptors>
           <archive>
             <manifest>
               <mainClass>${java.mainClass}</mainClass>
             </manifest>
-            <manifestEntries>
-              <Class-Path>config/</Class-Path>
-            </manifestEntries>
           </archive>
         </configuration>
         <executions>
           <execution>
-            <id>make-assembly</id>
+            <id>uber</id>
             <phase>package</phase>
             <goals>
               <goal>single</goal>

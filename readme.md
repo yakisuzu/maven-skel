@@ -10,7 +10,7 @@
 
 # jar
 `mvn package`  
-`java -jar target/skel-maven-1.0.0-jar-with-dependencies.jar`  
+`java -jar target/maven-1.0.0-uber.jar`  
 
 # url
 [The Central Repository](http://search.maven.org/)  
